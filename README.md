@@ -15,6 +15,18 @@ docker compose up -d
 ./mvnw spring-boot:run
 ```
 
+# Subir MySQL e Kafka localmente
+docker compose up -d
+
+# Rodar testes unitários e de integração (Testcontainers sobe containers próprios)
+./mvnw test
+
+# Rodar apenas os testes arquiteturais
+./mvnw test -Dtest=RegrasHexagonaisTest
+
+# Iniciar a aplicação
+./mvnw spring-boot:run
+
 ## Como executar os testes
 
 ```bash

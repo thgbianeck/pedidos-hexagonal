@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/pedidos
+    username: pedidos_app
+    password: pedidos_app
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: pedidos-service
+      auto-offset-reset: earliest
+    producer:
+      acks: all
+
+pedidos:
+  outbox:
+    publicador:
+      intervalo-ms: 2000
+      lote: 50
